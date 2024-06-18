@@ -16,20 +16,14 @@ public class LogOutTest extends BaseTest {
         driver.manage().window().maximize();
         driver.get("https://www.saucedemo.com/");
     }
-
-
     @Test
-    public void TC_003logOutTest() throws InterruptedException {
+    public void TC_006logOutTest() throws InterruptedException {
         logIn();
         sidebarPage.clickBurgerMenu();
-        Thread.sleep(2000);
+        wait.until(ExpectedConditions.visibilityOf(sidebarPage.logoutButton));
         sidebarPage.clickLogoutButton();
+
         Assert.assertEquals(driver.getCurrentUrl(),Strings.LOGIN_PAGE_URL);
         Assert.assertTrue(logInPage.getLoginButton().isDisplayed());
     }
-    @AfterClass
-    public void tearDown(){
-        driver.quit();
-    }
-
 }

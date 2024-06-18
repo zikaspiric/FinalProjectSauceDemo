@@ -47,7 +47,6 @@ public class LogInWithInvalidCredentials extends BaseTest {
         Assert.assertTrue(logInPage.errorMessageText.isDisplayed());
         Assert.assertEquals(driver.getCurrentUrl(), Strings.LOGIN_PAGE_URL);
     }
-
     @Test
     public void TC_005LogInWithoutInputCredentials() {
 
@@ -57,9 +56,5 @@ public class LogInWithInvalidCredentials extends BaseTest {
         Assert.assertTrue(logInPage.errorMessageText.isDisplayed());
         Assert.assertEquals(driver.getCurrentUrl(), Strings.LOGIN_PAGE_URL);
         Assert.assertEquals(logInPage.getTextFromErrorMessage(),Strings.LOGIN_ERROR_MESSAGE_EMPTY_FIELDS);
-    }
-    @AfterClass
-    public void tearDown(){
-        driver.quit();
     }
 }

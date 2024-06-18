@@ -46,7 +46,4 @@ public class LogInPage extends BaseTest {
     public String getTextFromErrorMessage() {
         return errorMessageText.getText();
     }
-
-
-
 }

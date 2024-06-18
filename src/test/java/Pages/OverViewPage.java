@@ -12,7 +12,7 @@ public class OverViewPage extends BaseTest {
     }
 
     @FindBy(id = "finish")
-    WebElement finishButton;
+   public WebElement finishButton;
 
     //--------------------------------------------
 

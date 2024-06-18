@@ -11,27 +11,26 @@ import org.testng.annotations.Test;
 public class ChackOutTest extends BaseTest {
     @BeforeMethod
     public void pageSetUp() {
-        driver.manage().window().maximize();
-        driver.get("https://www.saucedemo.com/");
-        logIn();
+        driver.manage().window().maximize();//ovde setujemo da se windows maximizira
+        driver.get("https://www.saucedemo.com/");//ovde na koji sajt da nas odvede
+        logIn();//ovo je logIn metoda napravljena da olaksa pisanje testa
     }
-
     @Test
-    public void checkoutWithoutLastNameCred() {
-        inventoryPage.clickOnBacpack();
+    public void TC_011checkoutWithoutLastNameCred() {//posto smo ulogovani idemo na sl korake
+        inventoryPage.clickOnBacpack();//iz ovog "Page" pozivamo koji Webelement da klikne
         inventoryPage.clickOnOnesie();
         sidebarPage.clickCartIcon();
         cartPage.clickOnCheckOutButton();
-        yourInformationPage.inputFirstName(Strings.FIRST_NAME);
+        yourInformationPage.inputFirstName(Strings.FIRST_NAME);//ovde upisujemo neke inpute
         yourInformationPage.inputZipCode(Strings.ZIP_CODE);
         yourInformationPage.clickContinueButton();
-
-
+    //ovde asertujemo tj uporedjujemo da li text ovog elementa je jednak nasem nekom textu
         Assert.assertEquals(yourInformationPage.getTextFromErrorMessage(),Strings.ERROR_LASTNAME_CHECKOUT_MESSAGE);
         Assert.assertEquals(driver.getCurrentUrl(), Strings.CHECKOUT_PAGE_URL);
+        //ovde assertujemo da li je trenutni URL jednak zapisu mog URLa
     }
     @Test
-    public void checkoutWithoutFirstName(){
+    public void TC_012checkoutWithoutFirstName(){
         inventoryPage.clickOnBacpack();
         inventoryPage.clickOnOnesie();
         sidebarPage.clickCartIcon();
@@ -45,7 +44,7 @@ public class ChackOutTest extends BaseTest {
 
     }
     @Test
-    public void checkoutWithoutZipCode(){
+    public void TC_013checkoutWithoutZipCode(){
         inventoryPage.clickOnBacpack();
         inventoryPage.clickOnOnesie();
         sidebarPage.clickCartIcon();
@@ -57,16 +56,8 @@ public class ChackOutTest extends BaseTest {
         Assert.assertEquals(yourInformationPage.getTextFromErrorMessage(), Strings.ERROR_ZIPPOSTALCODE_CHECOUT_MESSAGE);
         Assert.assertEquals(driver.getCurrentUrl(), Strings.CHECKOUT_PAGE_URL);
     }
-
-
-
     @AfterMethod
-    public void resetAppAndLogout() {
-        logOut();
-
-    }
-    @AfterClass
-    public void tearDown(){
-        driver.quit();
+    public void resetAppAndLogout() {//ovde imam metodu u kojoj prvo resetujem app i onda radim logOut
+        logOut();//ova metoda je u BaseTestu i posto je extendovana u ovoj klasi ne moram da je lociram sa nekom klasom.
     }
 }

@@ -12,7 +12,7 @@ public class CompletePage extends BaseTest {
     }
 
     @FindBy(id = "back-to-products")
-    WebElement backHome;
+    public WebElement backHome;
 
     //---------------------------------------------------
 

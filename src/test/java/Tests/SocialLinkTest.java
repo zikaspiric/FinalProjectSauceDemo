@@ -18,7 +18,7 @@ public class SocialLinkTest extends BaseTest {
         driver.get("https://www.saucedemo.com/");
     }
     @Test
-    public void twiterLinkTest(){
+    public void TC_008twiterLinkTest(){
         logIn();
     inventoryPage.clickTwiterButton();
         // ova metoda dohvata sve tabove ili prozore na drajveru
@@ -38,7 +38,7 @@ public class SocialLinkTest extends BaseTest {
     }
 
     @Test
-    public void facebookLinkTest(){
+    public void TC_009facebookLinkTest(){
     logIn();
     inventoryPage.clickFacebookButton();
         // ova metoda dohvata sve tabove ili prozore na drajveru
@@ -57,7 +57,7 @@ public class SocialLinkTest extends BaseTest {
         Assert.assertEquals(driver.getCurrentUrl(), Strings.INVENTORY_PAGE_URL);
     }
     @Test
-    public void linkedInTest(){
+    public void TC_010linkedInTest(){
         logIn();
         inventoryPage.clickLinkedIndButton();
         // ova metoda dohvata sve tabove ili prozore na drajveru
@@ -75,16 +75,8 @@ public class SocialLinkTest extends BaseTest {
 
         Assert.assertEquals(driver.getCurrentUrl(), Strings.INVENTORY_PAGE_URL);
     }
-
-
     @AfterMethod
     public void resetAppAndLogout(){
-       // logOut();
+        logOut();
     }
-
-    @AfterClass
-    public void tearDown(){
-       // driver.quit();
-    }
-
 }

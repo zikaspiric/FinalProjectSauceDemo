@@ -18,31 +18,24 @@ public class InventoryTest extends BaseTest {
         driver.get("https://www.saucedemo.com/");
         logIn();
     }
-
     @Test
-    public void TC_009AddTwoItemsAndVerifyCartIcon(){
+    public void TC_014AddTwoItemsAndVerifyCartIcon(){
         inventoryPage.clickOnBacpack();
         inventoryPage.clickOnOnesie();
+
         Assert.assertEquals(sidebarPage.getNumberFromShoppingCartIcon(),"2");
-
-
     }
     @Test
-    public void TC_010RemoveBackpackItemVerifyCartIcon(){
+    public void TC_015RemoveBackpackItemVerifyCartIcon(){
         inventoryPage.clickOnBacpack();
         inventoryPage.clickOnOnesie();
         inventoryPage.clickRemoveBackpackItem();
+
         Assert.assertEquals(sidebarPage.getNumberFromShoppingCartIcon(),"1");
     }
-
     @AfterMethod
     public void resetAndLogout(){
         logOut();
     }
 
-
-    @AfterClass
-    public void tearDown(){
-       driver.quit();
-    }
 }

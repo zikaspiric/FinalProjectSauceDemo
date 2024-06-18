@@ -15,7 +15,14 @@ public class InventoryPage extends BaseTest {
     public WebElement onesieItem;
 
     @FindBy(id = "remove-sauce-labs-backpack")
-    WebElement removeFromCartBackPackButton;
+    public WebElement removeFromCartBackPackButton;
+
+    @FindBy(xpath = "//li[@class = 'social_twitter']/a")
+    public WebElement twitterButton;
+    @FindBy(xpath = "//li[@class = 'social_facebook']/a")
+    public WebElement facebookButton;
+    @FindBy(xpath = "//li[@class = 'social_linkedin']/a")
+    public WebElement linkedInButton;
 
 
 
@@ -29,6 +36,18 @@ public class InventoryPage extends BaseTest {
     }
     public void clickRemoveBackpackItem(){
         removeFromCartBackPackButton.click();
+    }
+    public void clickTwiterButton(){
+        scrollIntoView(twitterButton);
+        twitterButton.click();
+    }
+    public void clickFacebookButton(){
+        scrollIntoView(facebookButton);
+        facebookButton.click();
+    }
+    public void clickLinkedIndButton(){
+        scrollIntoView(linkedInButton);
+        linkedInButton.click();
     }
 
 
