@@ -27,7 +27,7 @@ public class ShoppingTest extends BaseTest {
         yourInformationPage.inputLastName(Strings.LAST_NAME);
         yourInformationPage.inputZipCode(Strings.ZIP_CODE);
         yourInformationPage.clickContinueButton();
-        overViewPage.clickOnOverViewPage();
+        overViewPage.clickOnFinishButton();
         completePage.clickOnBackHomeButton();
 
         Assert.assertEquals(driver.getCurrentUrl(),Strings.INVENTORY_PAGE_URL);

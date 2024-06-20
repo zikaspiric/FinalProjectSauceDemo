@@ -60,6 +60,7 @@ public class SocialLinkTest extends BaseTest {
     public void TC_010linkedInTest(){
         logIn();
         inventoryPage.clickLinkedIndButton();
+
         // ova metoda dohvata sve tabove ili prozore na drajveru
         ArrayList<String> tabs = new ArrayList (driver.getWindowHandles());
 

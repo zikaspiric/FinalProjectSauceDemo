@@ -16,7 +16,7 @@ public class OverViewPage extends BaseTest {
 
     //--------------------------------------------
 
-    public void clickOnOverViewPage(){
+    public void clickOnFinishButton(){
         finishButton.click();
     }
 }

@@ -26,7 +26,7 @@ public class InventoryTest extends BaseTest {
         Assert.assertEquals(sidebarPage.getNumberFromShoppingCartIcon(),"2");
     }
     @Test
-    public void TC_015RemoveBackpackItemVerifyCartIcon(){
+    public void TC_015AddTwoItemsAndRemoveBackpackItemVerifyCartIcon(){
         inventoryPage.clickOnBacpack();
         inventoryPage.clickOnOnesie();
         inventoryPage.clickRemoveBackpackItem();

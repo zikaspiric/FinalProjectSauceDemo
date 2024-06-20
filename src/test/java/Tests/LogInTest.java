@@ -15,11 +15,12 @@ public class LogInTest extends BaseTest {
         driver.get("https://www.saucedemo.com/");
     }
     @Test
-    public void TC_001LoginWithValidCredentials(){
+    public void TC_001VerifyThatUserCanLoginWithValidCredentials(){
     logInPage.enterUsername(Strings.VALID_USERNAME);
     logInPage.enterPassword(Strings.VALID_PASSWORD);
     logInPage.clickLoginButton();
 
     Assert.assertEquals(driver.getCurrentUrl(),Strings.INVENTORY_PAGE_URL);
+    Assert.assertTrue(inventoryPage.backpackItem.isDisplayed());
     }
 }
